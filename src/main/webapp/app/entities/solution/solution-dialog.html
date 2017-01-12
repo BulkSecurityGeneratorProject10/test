@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySolutionLabel">Create or edit a Solution</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.solution.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.solution.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_titre">Titre</label>
+            <input type="text" class="form-control" name="titre" id="field_titre"
+                    ng-model="vm.solution.titre"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.solution.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cout">Cout</label>
+            <input type="text" class="form-control" name="cout" id="field_cout"
+                    ng-model="vm.solution.cout"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_publicVise">Public Vise</label>
+            <input type="text" class="form-control" name="publicVise" id="field_publicVise"
+                    ng-model="vm.solution.publicVise"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_objectif">Objectif</label>
+            <input type="text" class="form-control" name="objectif" id="field_objectif"
+                    ng-model="vm.solution.objectif"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_delai">Delai</label>
+            <input type="text" class="form-control" name="delai" id="field_delai"
+                    ng-model="vm.solution.delai"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_budgetMin">Budget Min</label>
+            <input type="number" class="form-control" name="budgetMin" id="field_budgetMin"
+                    ng-model="vm.solution.budgetMin"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_budgetMax">Budget Max</label>
+            <input type="number" class="form-control" name="budgetMax" id="field_budgetMax"
+                    ng-model="vm.solution.budgetMax"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nbrPersonnesVisees">Nbr Personnes Visees</label>
+            <input type="number" class="form-control" name="nbrPersonnesVisees" id="field_nbrPersonnesVisees"
+                    ng-model="vm.solution.nbrPersonnesVisees"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" ng-model="vm.solution.contact" ng-options="contact as contact.id for contact in vm.contacts track by contact.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

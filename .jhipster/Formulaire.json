@@ -1,0 +1,17 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "solution",
+            "otherEntityName": "solution",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "titre"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170106120427",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "formulaire",
+    "pagination": "infinite-scroll"
+}

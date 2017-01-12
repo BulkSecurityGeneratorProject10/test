@@ -1,0 +1,30 @@
+<div>
+    <h2>Formulaires</h2>
+    <jhi-alert></jhi-alert>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <div infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">            
+	            <label>Budget: <input ng-model="budget"></label>
+	            <label>Delai: <input ng-model="delai"></label>
+	            <label>Nombre de Personnes Vis&eacutees: <input ng-model="nbrPersonne"></label>
+	            <label>Public Vis&eacute:         	
+	            	<select ng-model="publicVise">
+						<option value="etudiants" >Etudiants</option>
+						<option value="etudiantsPersonnels">Etudiants et Personnel de l'UTC</option>
+						<option value="tous" selected="selected">Etudiants, Personnel de l'UTC et Compiegnois </option>
+					</select>     
+				</label>
+	            <label>Objectif:
+	            	<select ng-model="objectif">
+						<option value="event" >Evenement</option>
+						<option value="asso">Promo de l'association</option>
+					</select>  
+				</label> <br>
+	            <label for="field_solution">Solutions</label>
+            	<div class="form-control" id="field_contact" name="solution" ng-model="vm.formulaire.solution" ng-repeat="solution in vm.solutions| filter: searchBudget(budget)| filter: searchDelai(delai)| filter: searchnbrPersonnesVisees(nbrPersonne)| filter: searchPublicVise(publicVise)| filter: searchObjectif(objectif)">
+                		<a ui-sref="solution-detail({id:solution.id})">{{solution.titre}}</a>
+            	</div>
+            </div>
+        </table>
+    </div>
+</div>

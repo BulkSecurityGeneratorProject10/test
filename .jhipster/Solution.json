@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "contact",
+            "otherEntityName": "contact",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "cout",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "publicVise",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "budgetMin",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "budgetMax",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nbrPersonnesVisees",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170106102654",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "solution",
+    "pagination": "pager"
+}

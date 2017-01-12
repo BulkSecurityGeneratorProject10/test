@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span>Solution</span> {{vm.solution.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Titre</span></dt>
+        <dd>
+            <span>{{vm.solution.titre}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.solution.description}}</span>
+        </dd>
+        <dt><span>Cout</span></dt>
+        <dd>
+            <span>{{vm.solution.cout}}</span>
+        </dd>
+        <dt><span>Public Vise</span></dt>
+        <dd>
+            <span>{{vm.solution.publicVise}}</span>
+        </dd>
+        <dt><span>Objectif</span></dt>
+        <dd>
+            <span>{{vm.solution.objectif}}</span>
+        </dd>
+        <dt><span>Delai</span></dt>
+        <dd>
+            <span>{{vm.solution.delai}}</span>
+        </dd>
+        <dt><span>Budget Min</span></dt>
+        <dd>
+            <span>{{vm.solution.budgetMin}}</span>
+        </dd>
+        <dt><span>Budget Max</span></dt>
+        <dd>
+            <span>{{vm.solution.budgetMax}}</span>
+        </dd>
+        <dt><span>Nbr Personnes Visees</span></dt>
+        <dd>
+            <span>{{vm.solution.nbrPersonnesVisees}}</span>
+        </dd>
+        <dt><span>Contact</span></dt>
+        <dd>
+            <a ui-sref="contact-detail({id:vm.solution.contact.id})">{{vm.solution.contact.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="solution-detail.edit({id:vm.solution.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
